@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; // Import React and useState hook
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai"; // Import menu icons
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     // State to handle the navbar's open/close status
@@ -13,17 +14,20 @@ const Navbar = () => {
     return (
         <>
             {/* Main Navigation Bar */}
-            <nav className='bg-black text-white flex justify-between items-center h-16 px-10 mx-auto'>
+            <nav className='bg-black text-white w-full flex justify-between items-center h-16 mx-auto px-5'>
                 
                 {/* Logo */}
                 <h1 className='text-[27px] text-[gold] font-bold'>LIFESTYLE</h1>
                 
                 {/* Desktop Navigation Links */}
                 <ul className='hidden md:flex space-x-6'>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About Us</a></li>
-                    <li><a href="">Our Service</a></li>
-                    <li><a href="">Contact Us</a></li>
+
+                   <li> <NavLink to={"/"}> Home </NavLink> </li>
+                   <li> <NavLink to={"/about-us"}> About Us </NavLink> </li>
+                    <li><NavLink to={"/our-services"}> Our Services </NavLink></li>
+                    <li><NavLink to={"/contact-us"}> Contact Us </NavLink></li>
+                    
+                   
                 </ul>
                 
                 {/* Desktop Buttons */}
@@ -45,10 +49,10 @@ const Navbar = () => {
                     
                     {/* Mobile Navigation Links */}
                     <ul className='block space-y-4 pt-8'>
-                        <li className='border-b border-[#232323]'><a href="">Home</a></li>
-                        <li className='border-b border-[#232323]'><a href="">About Us</a></li>
-                        <li className='border-b border-[#232323]'><a href="">Our Service</a></li>
-                        <li className='border-b border-[#232323]'><a href="">Contact Us</a></li>
+                        <li className='border-b border-[#232323]'> <NavLink to={"/"}> Home </NavLink>  </li>
+                        <li className='border-b border-[#232323]'> <NavLink to={"/about-us"}> About Us </NavLink>  </li>
+                        <li className='border-b border-[#232323]'> <NavLink to={"/our-services"}> Our Services </NavLink> </li>
+                        <li className='border-b border-[#232323]'> <NavLink to={"/contact-us"}> Contact Us </NavLink> </li>
                     </ul>
                     
                     {/* Mobile Buttons */}
